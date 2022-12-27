@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Receipt</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="./convert.js"></script>
+</head>
+
+<body>
+    <div id="reciept">
+        <div id="pspdfkit-header">
+            <div class="header-columns">
+                <div class="logotype">
+                    <img style="height: 50px ; width: 50px" class="logo" src="svit12.jpg" />
+                    <p>Sardar Vallabhbhai Patel Institue of technology</p>
+                </div>
+
+                <div class="logotype">
+                    <p style="padding-top: 1px;">Vasad-388306</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page">
+            <div>
+                <h2>Receipt</h2>
+            </div>
+
+            <div class="intro-table">
+                <div class="intro-form intro-form-item">
+                    <p class="intro-table-title">Participant Name:</p><br>
+                    <p class="intro-table-title">Event Info. :</p>
+                </div>
+
+                <div class="intro-form">
+                    <div class="intro-form-item-border">
+                        <p class="intro-table-title">Payment Date:</p>
+                        <p id="date"></p>
+                        <script>
+                            var date = new Date();
+                            var current_date = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + "  " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+                            document.getElementById("date").innerHTML = current_date;
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page" style="page-break-after: always">
+            <div class="signer">
+                <div class="form signer-item" style="margin-top: 0px;">
+                    <label>Signature</label>
+                    <p>This is computer generated Receipt.It doesn't require any signature.</p>
+                </div>
+            </div>
+            <div>
+                <h4 style="text-align: center;">Thank you for your participation!</h4>
+            </div>
+        </div>
+        <!-- <button onclick="generatePDF();">Save Reciept</button> -->
+    </div>
+</body>
+
+</html>
